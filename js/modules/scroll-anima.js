@@ -1,3 +1,5 @@
+import debounce from './debounce.js';
+
 export default class ScrollAnima {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
@@ -5,7 +7,7 @@ export default class ScrollAnima {
 
     // Bind para manter o this no callback do
     // event listener do init()
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 100);
   }
 
   // Pega a distancia de cada item em relacao
