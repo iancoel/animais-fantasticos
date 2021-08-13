@@ -19,8 +19,8 @@ export default function initFetchAnimais() {
         numerosGrid.appendChild(divAnimal);
       });
 
-      const animaNumeros = new AnimaNumeros();
-      animaNumeros.init('ativo');
+      const animaNumeros = new AnimaNumeros('[data-numero]', 'ativo', '.numeros');
+      animaNumeros.init();
     } catch (erro) {
       console.log(erro);
     }
